@@ -3,12 +3,24 @@ module.exports = {
   env: {
     node: true
   },
-  extends: ["plugin:vue/essential", "@vue/prettier"],
+  extends: ["plugin:vue/essential"/*, "@vue/prettier"*/],
   rules: {
-    "indent": [2,4],
+    'vue/script-indent': ['error', 4,
+      {
+        'baseIndent': 1
+      }
+    ],
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
   },
+  overrides: [
+    {
+      "files": ["*.vue"],
+      "rules": {
+        "indent": "off"
+      }
+    }
+  ],
   parserOptions: {
     parser: "babel-eslint"
   }
