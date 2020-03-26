@@ -9,14 +9,6 @@
                     <div class="icon-desc">{{item.iconDesc}}</div>
                 </div>
             </swiper-slide>
-            <swiper-slide>
-                <div class="icon">
-                    <div class="icon-img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="icon-desc">测试</div>
-                </div>
-            </swiper-slide>
         </swiper>
     </div>
 </template>
