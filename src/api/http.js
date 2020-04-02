@@ -15,8 +15,6 @@ _http.defaults.validateStatus = (status) => {
 // 根据NODE_ENV配置设置不同环境的baseURL
 if (process.env.NODE_ENV === 'development') {
     _http.defaults.baseURL = 'http://localhost:8080'
-}else if (process.env.NODE_ENV === 'debug') {
-    _http.defaults.baseURL = 'http://localhost:8080'
 }else if (process.env.NODE_ENV === 'production') {
     _http.defaults.baseURL = 'http://localhost:8080'
 }
@@ -129,12 +127,13 @@ _http.interceptors.response.use(
             //         const result = await _http(res.config)
             //         resolve(result)
             //         return
+
             //     }
             // }
 
             // 弹出提示处理
             // TODO
-            alert('弹出提示,相应异常')
+            alert('弹出提示,请求异常')
 
             reject()
         })

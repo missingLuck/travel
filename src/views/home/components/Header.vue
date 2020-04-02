@@ -7,16 +7,24 @@
       <span class="iconfont">&#xe632;</span>
       输入城市/景点/游戏主题
     </div>
-    <div class="header-right">
-      城市
-      <span class="iconfont arrow-icon">&#xe64a;</span>
-    </div>
+    <router-link to="city">
+      <div class="header-right">
+        {{this.city}}
+        <span class="iconfont arrow-icon">&#xe64a;</span>
+      </div>
+    </router-link>
+
   </div>
 </template>
 
 <script>
     export default {
-        name: "Header"
+        name: "Header",
+        data(){
+            return {
+                city:'成都'
+            }
+        }
     };
 </script>
 
@@ -24,7 +32,7 @@
 @import "assets/styles/variable";
 .header {
   display: flex;
-  line-height: 0.86rem;
+  line-height: $headerHeight;
   background: $bgColor;
   color: #fff;
   .header-left {
@@ -50,6 +58,7 @@
     width: 1.24rem;
     float: right;
     text-align: center;
+    color: white;
     .arrow-icon {
       margin-left: -0.04rem;
       font-size: 0.24rem;

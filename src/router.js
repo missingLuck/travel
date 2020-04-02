@@ -12,13 +12,10 @@ export default new Router({
       component: Home
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.路由懒加载
+      path: "/city",
+      name: "city",
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/about/About.vue")
+        import( "./views/city/City.vue")
     }
   ],
   strict: process.env.NODE_ENV !== 'production'
