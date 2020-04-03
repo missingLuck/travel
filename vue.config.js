@@ -2,6 +2,7 @@ const path = require("path"); //引入path模块
 function resolve(dir) {
     return path.join(__dirname, dir); //path.join(__dirname)设置绝对路径
 }
+const mockIndexData = require("./src/mock/mock");
 module.exports = {
     publicPath: "./",
     outputDir: "dist", // 输出文件目录
@@ -22,4 +23,11 @@ module.exports = {
             config.mode = 'development'
         }
     },
+    devServer: {
+        before:(app) => {
+            app.get("/city.json", (req, res) => {
+                console.log(req, res)
+            });
+        }
+    }
 };

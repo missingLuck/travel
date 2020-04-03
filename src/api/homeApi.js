@@ -4,6 +4,11 @@ const server = {
         get(
             '/test',
         )
+    },
+    getCity() {
+        get(
+            '/city.json',
+        )
     }
 }
 
