@@ -1,12 +1,12 @@
 <template>
     <div class="icons">
-        <swiper :options="swiperOptions">
+        <swiper :options="swiperOptions" v-if="pages.length>0">
             <swiper-slide v-for="(page,index) of pages" :key="index">
-                <div class="icon" v-for="item of page" :key="item.index">
+                <div class="icon" v-for="item of page" :key="item.id">
                     <div class="icon-img">
-                        <img :src="item.iconImg" :alt="item.iconDesc">
+                        <img :src="item.imgUrl" :alt="item.desc">
                     </div>
-                    <div class="icon-desc">{{item.iconDesc}}</div>
+                    <div class="icon-desc">{{item.desc}}</div>
                 </div>
             </swiper-slide>
         </swiper>
@@ -19,38 +19,12 @@
         data(){
             return {
                 swiperOptions: {
-                    pagination: '.swiper-pagination',
                     loop:true
                 },
-                iconList:[{
-                    iconImg:require('assets/icons/0.png'),
-                    iconDesc:'热门景点热门景点热门景点'
-                },{
-                    iconImg:require('assets/icons/1.png'),
-                    iconDesc:'热门景点1'
-                },{
-                    iconImg:require('assets/icons/2.png'),
-                    iconDesc:'热门景点2'
-                },{
-                    iconImg:require('assets/icons/3.png'),
-                    iconDesc:'热门景点3'
-                },{
-                    iconImg:require('assets/icons/4.png'),
-                    iconDesc:'热门景点4'
-                },{
-                    iconImg:require('assets/icons/5.png'),
-                    iconDesc:'热门景点5'
-                },{
-                    iconImg:require('assets/icons/6.png'),
-                    iconDesc:'热门景点6'
-                },{
-                    iconImg:require('assets/icons/7.png'),
-                    iconDesc:'热门景点7'
-                },{
-                    iconImg:require('assets/icons/5.png'),
-                    iconDesc:'热门景点8'
-                }]
             }
+        },
+        props: {
+            iconList:Array
         },
         computed:{
             pages () {
@@ -62,6 +36,8 @@
                     }
                     pages[page].push(item)
                 })
+
+                console.log(pages)
                 return pages
             }
         }

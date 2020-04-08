@@ -2,9 +2,9 @@
     <div>
         <div class="recommend-title">周末去哪儿</div>
         <ul>
-            <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+            <li class="item border-bottom" v-for="item of weekendList" :key="item.id">
                 <div class="item-img-wrapper">
-                    <img class="item-img" :src="item.img" alt="" />
+                    <img class="item-img" :src="item.imgUrl" alt="" />
                 </div>
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
@@ -18,25 +18,8 @@
 <script>
     export default {
         name: "HomeWeekend",
-        data(){
-            return {
-                recommendList:[{
-                    id:0,
-                    img:require('assets/images/weekend0.jpg'),
-                    title:'成都必打卡',
-                    desc:'成都的标志，也是现代人对老成都的记忆'
-                },{
-                    id:1,
-                    img:require('assets/images/weekend1.jpg'),
-                    title:'摩崖石刻造像',
-                    desc:'诸事不顺，来抱佛脚，中国最壮观的大佛大盘点~来一场真正的“佛”系之旅，乐山大佛是首选'
-                },{
-                    id:3,
-                    img:require('assets/images/weekend2.jpg'),
-                    title:'冰瀑节，相约美丽中国',
-                    desc:'康巴大地上的连绵雪山和不羁的江河，肥沃的田园和诗意的牧场，让这篇神秘之地幸福永恒'
-                }]
-            }
+        props:{
+            weekendList:Array
         }
     }
 </script>

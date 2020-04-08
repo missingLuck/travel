@@ -4,7 +4,7 @@
         <ul>
             <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
                 <div class="item-img-wrapper">
-                    <img class="item-img" :src="item.img" alt="" />
+                    <img class="item-img" :src="item.imgUrl" alt="" />
                 </div>
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
@@ -19,25 +19,8 @@
 <script>
     export default {
         name: "HomeRecommend",
-        data(){
-            return {
-                recommendList:[{
-                    id:0,
-                    img:require('assets/images/recommend0.jpg'),
-                    title:'药王谷药王谷药王谷药王谷药王谷药王谷药王谷药王谷药王谷',
-                    desc:'药王谷描述'
-                },{
-                    id:1,
-                    img:require('assets/images/recommend1.jpg'),
-                    title:'花舞人间',
-                    desc:'花舞人间描述花舞人间描述花舞人间描述花舞人间描述花舞人间描述花舞人间描述'
-                },{
-                    id:3,
-                    img:require('assets/images/recommend0.jpg'),
-                    title:'药王谷',
-                    desc:'药王谷描述3'
-                }]
-            }
+        props: {
+            recommendList:Array
         }
     }
 </script>
