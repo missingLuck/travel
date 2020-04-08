@@ -10,6 +10,11 @@ const server = {
         get(
             '/city.json'
         )
+    },
+    getDetailInfo() {
+        get(
+            '/detailInfo.json'
+        )
     }
 }
 

@@ -16,6 +16,12 @@ export default new Router({
       name: "city",
       component: () =>
         import( "./views/city/City.vue")
+    },
+    {
+      path: "/detail/:id",
+      name: "Detail",
+      component: () =>
+          import( "./views/detail/Detail.vue")
     }
   ],
   strict: process.env.NODE_ENV !== 'production'
