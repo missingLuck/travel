@@ -1,10 +1,12 @@
 <template>
-    <swiper v-if="swiperList.length>0" class="wrapper" :options="swiperOptions">
-        <swiper-slide v-for="item of swiperList" :key="item.id">
-            <img class="swiper-img" :src="item.imgUrl" alt="">
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
+    <div>
+        <swiper :options="swiperOption" v-if="showSwiper" class="wrapper">
+            <swiper-slide v-for="item of swiperList" :key="item.id">
+                <img class="swiper-img" :src="item.imgUrl" alt="">
+            </swiper-slide>
+            <div class="swiper-pagination" slot="pagination"></div>
+        </swiper>
+    </div>
 </template>
 
 <script>
@@ -12,11 +14,16 @@
         name: "HomeSwiper",
         data(){
             return {
-                swiperOptions: {
+                swiperOption: {
                     pagination: '.swiper-pagination',
                     loop:true,
                     autoplay:2000
                 }
+            }
+        },
+        computed:{
+            showSwiper(){
+                return this.swiperList.length
             }
         },
         props:{

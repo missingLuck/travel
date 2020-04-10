@@ -1,16 +1,27 @@
 <template>
     <div>
-        <detail-banner :bannerImg="bannerImg" :sightName="sightName"></detail-banner>
+        <detail-banner
+            :bannerImg="bannerImg"
+            :sightName="sightName"
+            :gallaryImgs="gallaryImgs"
+        ></detail-banner>
+        <detail-header></detail-header>
+        <detail-list :categoryList="categoryList"></detail-list>
+        <div class="content"></div>
     </div>
 </template>
 
 <script>
     import axios from 'axios'
-    import detailBanner from './components/Banner'
+    import DetailBanner from './components/Banner'
+    import DetailHeader from './components/Header'
+    import DetailList from './components/List'
     export default {
         name: "Detail",
         components:{
-            detailBanner
+            DetailBanner,
+            DetailHeader,
+            DetailList
         },
         data(){
             return {
@@ -26,7 +37,7 @@
                     const _http = axios.create();
                     await _http({
                         method: 'get',
-                        url:'/getDetailInfo.json',
+                        url:'/getDetailInfo.json'
                     }).then(res =>{
                         const rst = res.data
                         if(rst.ret&&rst.data){
@@ -50,5 +61,7 @@
 </script>
 
 <style scoped>
-
+    .content {
+        height: 50rem;
+    }
 </style>

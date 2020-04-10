@@ -56,7 +56,7 @@
                         }
                     })
 
-                    // const data  = await apis.getHomeInfo(this.city)
+                    // const data  = await apis.getHomeInfo()
                     // console.log(data)
                 }catch (e) {
                     console.log(e)
