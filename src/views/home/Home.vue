@@ -55,7 +55,6 @@
                             this.weekendList = data.weekendList
                         }
                     })
-
                     // const data  = await apis.getHomeInfo()
                     // console.log(data)
                 }catch (e) {
