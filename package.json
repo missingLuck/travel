@@ -33,5 +33,17 @@
     "sass-loader": "^8.0.0",
     "vue-cli-plugin-element": "^1.0.1",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "description": "## Project setup ``` npm install ```",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/missingLuck/travel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/missingLuck/travel/issues"
+  },
+  "homepage": "https://github.com/missingLuck/travel#readme"
 }
